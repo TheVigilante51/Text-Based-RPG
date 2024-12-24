@@ -17,6 +17,9 @@ import random
 #Variables
 #--------------------------------------------------------------------------------------------------------------#
 
+Game = {
+    "running":True
+}
 
 locations = {
         "graveyard":{
@@ -554,7 +557,7 @@ def CheckDeath():
             print("Vex now rules the sorcerers and lives a lavish life")
             print("The last chance to save",locations["village"]["name"],"was gone")
         
-        exit()
+        Game["running"] = False
 
 def CheckSword():
     if characters["Hero"]["currentSwordKills"] >= 20:
@@ -642,10 +645,10 @@ As Kai stood victorious beside Vex, the people whispered: Was his pursuit of jus
 ****************************************************************************************************************************************************
 ''')
     
-    exit()
 
 
 def FindVex():
+    
     if (characters["Hero"]["exp"] >= 250) and (False not in characters["Hero"]["seen"].values()):
         print("Kai Has Killed enough sorcerers to make Vex notice.")
         print("Vex has noticed Kai killing almost all of Vex's sorcerers")
@@ -669,6 +672,9 @@ Vex
         print("Kai is terrified by the sheer imagination of Vex's power")
         print("But still Kai Reaches to the Souls Graveyard")
         LastBattle()
+        Game["running"] = False
+
+
 
 #Main loop and Game
 #-----------------------------------------------------------------------------------------------------------#
@@ -676,7 +682,8 @@ Vex
 Prologue()
 print("Fighting wizards or sorcerers will give you some experience and sometimes even an item")
 print("I should probably start exploring Places near me from where I could get some useful items")
-while True:
+
+while Game["running"] == True:
     inp = input('''
 What would you like to do ?
              
@@ -724,8 +731,7 @@ Enter your choice: ''')
 
     elif inp == "9":
         UsePotions()
-
-    FindVex()
+    
     CheckDeath()
     UnlockCave()
-    CheckDeath()
+    FindVex()
