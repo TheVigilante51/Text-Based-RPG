@@ -1,5 +1,6 @@
 # Text-Based-RPG
 This is a text based RPG made as a computer science practical project of class 11th. It uses only those functions of python which are mentioned in Computer Science 11th Class Book by Sumita Arora.
+This Game was made under **20** hours 
 The Game revolves around our main character "Kai" who is a young talented boy who sets off for a new journey
 
 # Features
