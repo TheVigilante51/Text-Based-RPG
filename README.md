@@ -11,7 +11,8 @@ The Game revolves around our main character "Kai" who is a young talented boy wh
 
 
 # Highlights
-* This Game was made under **20** hours 
+* This Game was made under **20** hours
+* Not even a **SINGLE LINE** is AI Generated
 * Only "random" is used as an external library
 * Dictionaries and Lists are used a lot
 * only standard python features are used
